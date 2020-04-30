@@ -1,15 +1,37 @@
+<!-- 
+Date : May 1 2020
+Author : Khoa Bui
+Notes : Completed coding up the requirements (receive bank deposit numbers, sort and output)
+-->
 <html>
 <head>
 <title>Property Me Bank Deposit Slip Script</title>
 </head>
 <body>
 
-    <p id="demo"></p>
+    <h1>Property Me Bank Deposit Slip Script</h1>
+    <p>Here's the original bank deposits: </p>
+    <p id="OriginalBankDeposits"></p>
+
+    <p>Here's the ordered bank deposits: </p>
+    <p id="OrderedBankDeposits"></p>
 
     <script>
-        var receiptnumbers = ["892", "893", "894", "895"];
 
-        document.getElementById("demo").innerHTML = receiptnumbers + "<br>";
+        // Pass the bank deposit reciepts into an array
+        var receiptnumbers = [892, 893, 894, 895, 906, 910, 845];
+
+        // Simply print out the array
+        document.getElementById("OriginalBankDeposits").innerHTML = receiptnumbers + "<br>";
+
+        // Order the array from lowest to highest and store it into a variable
+        receiptnumbers.sort(function(a, b){
+            return a - b;
+        });
+
+        // Output the variable (sorted array)
+        document.getElementById("OrderedBankDeposits").innerHTML = receiptnumbers + "<br>";
+
     </script>
     
 </body>
